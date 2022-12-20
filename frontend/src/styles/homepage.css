@@ -1,0 +1,33 @@
+.homepage{
+    width: 100vw;
+    height: calc(100vh - 50px);
+    background: red;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sDetails{
+    height:100%;
+    flex:3;
+
+    background-color:blue;
+}
+
+.feed{
+    background-color:green;
+    flex:5;
+    height:100%;
+
+    overflow-y: scroll;
+
+}
+
+.myReg{
+    height:100%;
+    
+
+    background-color: yellow;
+    flex:3;
+}
