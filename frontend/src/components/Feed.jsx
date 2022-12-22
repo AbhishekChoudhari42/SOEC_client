@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react'
 import FeedElement from './FeedElement'
 import axios from 'axios'
 import '../styles/feed.css'
-const Feed = () => {
+const Feed = (props) => {
 
 const [feed,setFeed] = useState([])
 const [error,setError] = useState(false)
@@ -30,7 +30,7 @@ const [error,setError] = useState(false)
         
     {feed && feed.map((data) => {
 
-            return <FeedElement data = {data} key={data._id}/>
+            return <FeedElement props = {props} data = {data} key={data._id}/>
     
     })}
 

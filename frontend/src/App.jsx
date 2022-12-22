@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import { useState } from 'react';
 const router = createBrowserRouter([
   {
     path: "/homepage",
@@ -17,21 +17,31 @@ const router = createBrowserRouter([
     path: "/login",
     element:<Login/>
   },
-  {
-    path: "/activity",
-    element:<HomePage/>
-  }
+ 
   
 ]);
-
+import AuthContext from './AuthContext/authContext'
+import React from 'react';
 function App() {
 
+  const [authstatus, setauthstatus] = useState(false);
+  const login = (value) => {
+    setauthstatus(value);
+  };
+
+
   return (
-    <div className="App">
+    <React.Fragment >
+      <div className="App">
+      <AuthContext.Provider value={{ status: authstatus, login: login }}>
       <Navbar/>
+
       <RouterProvider router={router} />
-      
-    </div>
+
+      </AuthContext.Provider>
+      </div>
+    </React.Fragment>
+       
   )
 }
 

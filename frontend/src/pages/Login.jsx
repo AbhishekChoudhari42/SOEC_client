@@ -1,7 +1,12 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState , useContext} from 'react'
 import axios from 'axios'
+
+import authContext from '../AuthContext/authContext'
+
 const Login = () => {
+
+   const auth = useContext(authContext);
 
     const [formData, setFormData] = useState({
         email: "",
@@ -17,12 +22,15 @@ try{
   await axios.post(URL,formData).then(res => {
     console.log(res.data);
     console.log(res.status);
+    auth.login(true);
+    localStorage.setItem('lstatus',true)
     window.location.href = '/homepage'
     
     return res.status
   })
-}catch(error){
-  alert("Invalid credentials");
+}
+catch(error){
+  console.log(error)
 }
         
 
@@ -38,7 +46,7 @@ try{
 
         if(login == 200){
           console.log('login')
-          window.location.href = 'http://localhost:5000/homepage'
+          // window.location.href = 'http://localhost:5000/homepage'
         }
 
         

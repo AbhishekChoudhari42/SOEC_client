@@ -1,7 +1,6 @@
 .homepage{
     width: 100vw;
     height: calc(100vh - 50px);
-    background: red;
 
     display: flex;
     justify-content: space-around;
@@ -12,22 +11,45 @@
     height:100%;
     flex:3;
 
-    background-color:blue;
+    /* background-color:blue; */
 }
 
 .feed{
-    background-color:green;
+    /* background-color:green; */
     flex:5;
     height:100%;
-
     overflow-y: scroll;
+    border: 1px solid #ccc;
 
 }
 
 .myReg{
+    position: relative;
     height:100%;
-    
-
-    background-color: yellow;
+    /* background-color: red; */
     flex:3;
+    overflow-y: scroll;
+    padding: 1em;
+    padding-top:6em;
+    
+}
+
+.myReg h3{
+    background-color: #fff;
+    padding: .5em;
+    margin-bottom: 1em;
+    border-radius: .5em;
+    border: 1px solid #ccc;
+
+}
+
+.myReg h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .5em;
+    margin-bottom: .5em;
+    border-bottom: 1px solid #ccc;
+
 }
